@@ -8,8 +8,7 @@ export const getActivity = () => (dispatch) => {
   dispatch(fetchStart());
   axios.get('https://www.boredapi.com/api/activity')
   .then(resp => {
-    console.log(resp)
-    dispatch(fetchSuccess(resp.data.activity))
+    dispatch(fetchSuccess(resp.data))
   })
   .catch(error => dispatch(fetchFail(error)))
 }
@@ -18,8 +17,8 @@ export const fetchStart = () => {
   return({type:FETCH_START});
 }
 
-export const fetchSuccess = (activity) => {
-  return({type:FETCH_SUCCESS, payload: activity});
+export const fetchSuccess = (data) => {
+  return({type:FETCH_SUCCESS, payload: data});
 }
 
 export const fetchFail = (error) => {

@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {  getActivity } from "../actions";
 import { connect } from 'react-redux';
+import ActivityList from "./ActivityList";
 
-const Activity = ({activity, isFetching, error, dispatch}) => {
+import '../App.css';
+
+const Activity = ({ isFetching, error, dispatch}) => {
 
   if (error) {
     return (
@@ -17,13 +20,13 @@ const Activity = ({activity, isFetching, error, dispatch}) => {
 
 
   const handleClick = () =>{
-    dispatch(getActivity(activity))
+    dispatch(getActivity())
   }
 
   return (
-    <div>
+    <div className="Activity">
       <h1>Activities to do when Bored</h1>
-      <h2>{activity}</h2>
+      <ActivityList />
       <button onClick={handleClick}>Find Activities</button>
     </div>
   )
@@ -32,7 +35,6 @@ const Activity = ({activity, isFetching, error, dispatch}) => {
 
 const mapStateToProps = state => {
   return {
-    activity: state.activity,
     error: state.error,
     isFetching: state.isFetching
   }

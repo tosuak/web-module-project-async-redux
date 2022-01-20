@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: linear-gradient(rgb(86, 207, 255), rgb(248, 75, 248));
+
+}
+.Activity {
+  width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.ActivityList{
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap column;
+  align-items: center;
+  background-image: linear-gradient(rgb(253, 88, 69), rgb(255, 166, 0));
+  height: 50vh;
+  border-radius: 20px;
+  line-height: 60px;
+}

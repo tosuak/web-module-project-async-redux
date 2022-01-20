@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import App from './App';
-import './index.css';
+import './App.css';
 
 import { reducer } from './reducers';
 
